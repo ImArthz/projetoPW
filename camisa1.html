@@ -1,0 +1,165 @@
+<html>
+    <html>
+        <head>
+        <title>Site Principal</title>
+        <style>
+        html {
+          height: 100%;
+        }
+        
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          background: linear-gradient(#0d40e6, #531313);
+        }
+        
+        table {
+          border: 2px solid #000;
+          width: 600px;
+          margin: 0 auto;
+          background-color: #fff;
+        }
+        
+        table tr:nth-child(1) td {
+          color: #000;
+        }
+        
+        table tr:nth-child(1) td strong {
+          font-weight: bold;
+        }
+        
+        table tr:nth-child(1) td i {
+          color: blue;
+        }
+        
+        table tr:nth-child(2) td:nth-child(1) {
+          color: red;
+          font-style: italic;
+          text-decoration: underline;
+        }
+        
+        table tr:nth-child(2) td:nth-child(2) {
+          color: green;
+          text-align: center;
+        }
+        
+        table tr:nth-child(2) td:nth-child(2) p {
+          text-align: center;
+        }
+        
+        table tr:nth-child(3) td {
+          text-align: center;
+        }
+        
+        table tr:nth-child(3) td a {
+          text-decoration: none;
+        }
+        
+        table tr:nth-child(3) td button {
+          display: block;
+          margin: 10px auto;
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+        
+        table tr:nth-child(3) td a:hover {
+          background-color: #45a049;
+        }
+        
+        legend {
+          font-weight: bold;
+        }
+        
+        select,
+        input[type="radio"] {
+          margin-top: 10px;
+        }
+        
+        table tr:nth-child(1) img {
+          display: block;
+          margin: 0 auto;
+        }
+        
+        </style>
+        </head>
+        <body>
+              
+        <table border="2">
+            <tr>
+                <td colspan="2">
+                    <img src="https://www.homehost.com.br/blog/wp-content/uploads/2019/07/logo_homehost.png" alt="Nome da imagem" width="570">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="6">
+                    <u><i style="color:red">Camisas do Japão</i></u>
+                </td>
+                <td>
+                    <p style="color:green; text-align:center">complete o pagamento</p>
+                </td>
+            </tr>
+    <tr>
+        
+        <td style="text-align:center">
+        <img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/550/099/products/2f5eefae-4f3a-45b5-944a-a9e997329d0d1-22f46071331848a47416395799912278-640-0.webp" width="500" align="center">
+        <p style="color:blue;"><i><u>350.00R$</u></i></p>
+        <p style="color:blue;"><i><u>OU</u></i></p>
+        <p style="color:blue;"><i><u>10x de 35.00R$</u></i></p>
+        <legend>Selecione forma de pagamento</legend>
+        <select>
+            <option>Selecione</option>
+            <optgroup label="Cartao de credito ">
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="Elo">Elo</option>
+                <option value="AmericanExpress">AmericanExpress</option>
+            </optgroup>
+            <optgroup label="Cartao de debito ">
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="Elo">Elo</option>
+                <option value="AmericanExpress">AmericanExpress</option>
+            </optgroup>
+            <optgroup label="Boleto/pix"> 
+                <option value="boleto">boleto</option>
+                <option value="pix">pix</option>
+            </optgroup>
+        </select>
+        <select>
+            <option value="prazo">a prazo </option>
+            <option value="prazo">a vista </option>
+        </select><br>
+        
+        <input type="radio" value="endereco" name="endereco">Usar endereco cadastrado<br>
+        <input type="radio" value="endereco2" name="endereco">Usar outro  cadastrado<br>
+        <input type="text" name="oendereco" placeholder="Digite o endereco desejado para entrega"><br>
+        <input type="radio" value="entrega" name="entrega">Entrega pelos correios (15) dias <br>
+        <input type="radio" value="entrega2" name="entrega">Entrega comum (30) dias <br>
+        <p style="text-align:center"> Escolha o tamanho da camisa </p>
+        <input type="radio" value="M" name="tamanho">M
+        <input type="radio" value="P" name="tamanho">P
+        <input type="radio" value="G" name="tamanho">G
+
+  
+        
+        <p style="text-align:center"><button onclick="msg()">comprar</button></p>  
+        <p style="text-align:center"><a href="./camisas.html"><button class="comprar">Voltar para camisas</button></a></p>
+        <p style="text-align:center"><a href="./pagina.html"><button class="comprar">Voltar para página inicial</button></a></p> 
+        </td>
+     <script>
+        function msg()
+        {
+            alert("Produto sera enviado no endereco cadastrado ")
+        }
+     </script>   
+    
+</table>
+    
+</body>
+</html>

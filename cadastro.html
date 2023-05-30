@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprasonline.com/registrar</title>
+    <style>
+        body {
+            background: linear-gradient(#0d40e6, #531313);
+        }
+        fieldset {
+            border: none;
+        }
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form p {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+            color: #fff;
+        }
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder,
+        input[type="tel"]::placeholder,
+        input[type="date"]::placeholder,
+        select::placeholder {
+            color: #fff;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            border-bottom: 1px solid #f68e44;
+        }
+        input[type="submit"] {
+            background-color: #b79726;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #f49803;
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            background-color: #b79726;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #f49803;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <form method="get" action="enviar-de-dados.php">
+            <p>
+                Nome: <input type="text" name="nome" placeholder="Digite seu Nome"><br>
+                Sobrenome: <input type="text" name="sobrenome" placeholder="Digite seu Sobrenome"><br>
+                Email: <input type="email" name="email" placeholder="Digite seu Email"><br>
+                Data de nascimento: <input type="date" name="nascimento"><br>
+                Senha: <input type="password" name="senha" placeholder="Digite sua senha"><br>
+                Confirme a senha: <input type="password" name="senhacom" placeholder="Confirme a senha"><br>
+                Telefone: <input type="tel" name="tel" placeholder="Digite seu telefone"><br>
+                Endereço: <input type="text" name="endereco" placeholder="Digite seu endereço"><br>
+                Selecione um método de pagamento:
+                <select name="metodo_pagamento">
+                    <option value="">Selecione</option>
+                    <optgroup label="Cartão de Débito">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="outros">Outros</option>
+                    </optgroup>
+                    <optgroup label="Cartão de Crédito">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="outros">Outros</option>
+                    </optgroup>
+                    <optgroup label="PIX">
+                        <option value="bb">Banco do Brasil</option>
+                        <option value="caixa">Caixa</option>
+                        <option value="santander">Santander</option>
+                        <option value="outros">Outros</option>
+                    </optgroup>
+                    <optgroup label="Boleto">
+                        <option value="pf">Pessoa Física</option>
+                        <option value="pj">Pessoa Jurídica</option>
+                    </optgroup>
+                    </select><br>
+            </p>
+        </form>
+        <form>
+            <p>
+                <input type="submit" value="Voltar para Login" formaction="./login.html">
+                <input type="submit" value="Registrar" formaction="./pagina.html">
+            </p>
+        </form>
+    </fieldset>
+
+</body>
+</html>
