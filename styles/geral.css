@@ -1,0 +1,10 @@
+html, body{
+    min-height:  100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: [sans-serif];
+    background: linear-gradient(#0d40e6, #531313)
+}
