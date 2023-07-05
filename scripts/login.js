@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Verificar se há um "user" no localStorage
+  const user = localStorage.getItem('user');
+  
+  // Se existir um "user", redirecionar para "loja.html"
+  if (user) {
+    window.location.href = '../loja.html';
+  }
+});
+
 // Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDszb3HU4O2zz3mJfU0liqjZQ3h_2Yy3J4",
@@ -15,7 +25,8 @@ firebase.initializeApp(firebaseConfig);
 const loginForm = document.getElementById('login-form');
   
 // Manipulador de evento de envio do formulário
-async function logar(){
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
   // Obtenção dos valores de email e senha
   const email = loginForm['email'].value;
   const password = loginForm['password'].value;
@@ -33,12 +44,12 @@ async function logar(){
   if (dados.senha == password){
     alert("Logado com sucesso!")
     localStorage.setItem('user', JSON.stringify(dados));
-    window.location.href = "cliente.html"
+    window.location.href = "../loja.html"
   }
   else{
     alert("Usuário ou Senha incorretos")
   }
-}
+})
 
     // // Recuperar dados do usuário do Local Storage
     // const userData = JSON.parse(localStorage.getItem('user'));

@@ -1,4 +1,13 @@
-// Your web app's Firebase configuration
+document.addEventListener('DOMContentLoaded', function() {
+  // Verificar se há um "user" no localStorage
+  const user = localStorage.getItem('user');
+  
+  // Se existir um "user", redirecionar para "loja.html"
+  if (user) {
+    window.location.href = '../loja.html';
+  }
+});
+
 const firebaseConfig = {
   apiKey: "AIzaSyDszb3HU4O2zz3mJfU0liqjZQ3h_2Yy3J4",
   authDomain: "lojapw-fb3a6.firebaseapp.com",
@@ -9,7 +18,6 @@ const firebaseConfig = {
   appId: "1:815610211542:web:f8dd536df181ea1f07ad77"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 
 // Referência ao formulário
@@ -42,7 +50,7 @@ cadastro.addEventListener('submit', async (e) => {
       admin: false,
     })
     alert("Cadastro realizado com sucesso!")
-    window.location.href = "cliente.html"
+    window.location.href = "../loja.html"
   }).catch((error) => {
     console.error('Erro ao obter documentos:', error);
   });

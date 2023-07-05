@@ -1,3 +1,28 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Verificar se há um "user" no localStorage
+  const user = localStorage.getItem('user');
+  const navElement = document.querySelector('nav');
+
+  const dadosUsuario = JSON.parse(user);
+
+  // Se existir é porque está logado e preciso mudar o nav
+  if (user) {
+    texto = ''
+    if (dadosUsuario.admin){
+      texto += "<a href='pages/admin.html'>Administração</a>"
+    }
+    texto += "<a href='pages/perfil.html'>Perfil</a>"
+    texto += "<button type='button' onclick='deslogar()'>Deslogar</button>"
+    navElement.innerHTML = texto
+  }
+});
+
+function deslogar(){
+  const user = localStorage.getItem('user');
+  localStorage.removeItem('user');
+  window.location.href = "loja.html"
+}
+
 // Referência aos elementos da interface do usuário
 const productList = document.getElementById('product-list');
 const cartItems = document.getElementById('cart-items');
