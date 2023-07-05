@@ -1,0 +1,25 @@
+# Ignorar a pasta node_modules
+node_modules/
+
+# Arquivos de log
+logs/
+
+# Arquivos de build
+build/
+
+# Outros arquivos/diretórios que você deseja ignorar
+
+# Ignorar o arquivo .env (contém configurações sensíveis)
+.env
+
+# Ignorar arquivos temporários
+*.tmp
+
+# Ignorar arquivos de backup
+*.bak
+
+# Ignorar arquivos de cache
+*.cache
+
+# Ignorar arquivos gerados automaticamente
+*.generated
