@@ -1,0 +1,282 @@
+.indicator {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  border: 2px solid;
+  border-color: transparent;
+  border-left-color: currentColor;
+  border-bottom-color: currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+  margin-left: 2em;
+}
+
+.checkbox-usuarios:checked + label .indicator,
+.checkbox-produto:checked + label .indicator,
+.checkbox-estoque:checked + label .indicator,
+.checkbox-fluxo:checked + label .indicator {
+  transform: rotate(-225deg);
+}
+
+.container-checkbox {
+  width: 60%;
+  margin: 0 20%;
+}
+
+.container-checkbox label,
+.container-checkbox h3 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.container-checkbox input[type=checkbox] {
+  display: none;
+}
+
+#usuarios form {
+  display: grid;
+  grid-template-columns: 40% 10% 40% 10%;
+  row-gap: 0.5em;
+}
+
+#produtos form {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  row-gap: 0.5em;
+}
+
+#usuarios label,
+#produtos label {
+  font-size: medium;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+}
+
+#usuarios form input[type=submit] {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  width: 10%;
+}
+
+#usuarios input[type=checkbox] {
+  display: block;
+}
+
+label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+#usuarios,
+#produto,
+#produtos {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.checkbox-usuarios:checked ~ #usuarios,
+.checkbox-produto:checked ~ #produto,
+.checkbox-estoque:checked ~ #produtos,
+.checkbox-fluxo:checked ~ #caixa {
+  max-height: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+#produto .produto-box {
+  position: relative;
+}
+
+#produto .produto-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+#produto button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px; /* Altere o valor do padding conforme necessário */
+  color: #b79726;
+  font-size: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.6s;
+  margin-top: 40px;
+  letter-spacing: 5px;
+  background: transparent;
+  border: none;
+}
+
+#produto button:hover {
+  background: #f49803;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f4c803, 0 0 25px #bd9d0b, 0 0 50px #f4e403, 0 0 100px #d5cf1e;
+}
+
+#caixa {
+  color: white;
+  font-size: 1.5em;
+ font-weight: bold;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+h2,
+h3 {
+  margin-bottom: 20px;
+}
+
+#cart {
+  margin-top: 50px;
+}
+
+button {
+  background-color: #06ff82; /* Altere para a cor desejada */
+  color: white;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #056302; /* Altere para a cor desejada ao passar o mouse */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.add-to-cart-btn,
+#checkout-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover,
+#checkout-btn:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para as caixas de quantidade de produto */
+.quantity-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quantity-label {
+  margin-right: 10px;
+}
+
+.quantity-input {
+  width: 40px; /* Ajuste o valor conforme necessário */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+html, body{
+  min-height:  100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+  font-family: [sans-serif];
+  background: linear-gradient(#0d40e6, #531313)
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: rgba(48, 1, 1, 0.5);
+  box-shadow: 0 15px 25px rgba(4, 0, 37, 0.6);
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+nav a{
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  color: #b79726;
+  font-size: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .6s;
+  letter-spacing: 5px
+}
+
+nav a:hover{
+  background: #f49803;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f4c803,
+      0 0 25px #bd9d0b,
+      0 0 50px #f4e403,
+      0 0 100px #d5cf1e;
+}
+
+nav button{
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  color: #b79726;
+  font-size: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .6s;
+  letter-spacing: 5px;
+  background-color: transparent;
+  border: none;
+}
+
+nav button:hover{
+  background: #f49803;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f4c803,
+      0 0 25px #bd9d0b,
+      0 0 50px #f4e403,
+      0 0 100px #d5cf1e;
+}
