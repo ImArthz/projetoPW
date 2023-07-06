@@ -10,22 +10,29 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 </head>
 <body>
-  <nav>
+  <nav class="top-nav">
     <a href="pages/login.html">Logar</a>
     <a href="pages/cadastro.html">Cadastrar</a>
   </nav>
   <div class="container">
     <h2>Loja Online</h2>
 
+    <div id="filters">
+      <input type="text" id="filter-name" placeholder="Filtrar por nome">
+      <input type="text" id="filter-category" placeholder="Filtrar por categoria">
+      <button id="apply-filters-btn">Aplicar Filtros</button>
+    </div>
+
     <div id="product-list">
       <!-- Aqui serão exibidos os produtos -->
     </div>
 
-  <div id="cart">
-    <h3>Carrinho de Compras</h3>
-    <ul id="cart-items"></ul>
-    <button id="checkout-btn">Finalizar Compra</button>
-  </div>
+    <div id="cart">
+      <h3>Carrinho de Compras</h3>
+      <ul id="cart-items"></ul>
+      <div id="cart-total">Total: R$ 0.00</div>
+      <button id="checkout-btn">Finalizar Compra</button>
+    </div>
   </div>
   <script src="scripts/loja.js"></script>
 </body>
