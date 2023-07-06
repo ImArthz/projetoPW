@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Se existir um "user", redirecionar para "loja.html"
   if (user) {
-    window.location.href = '../loja.html';
+    window.location.href = "../loja.html"
   }
 });
 
@@ -40,6 +40,7 @@ loginForm.addEventListener('submit', async (e) => {
   }
   logado.forEach(documento => {
     dados = documento.data()
+    dados.id = documento.id
   });
   if (dados.senha == password){
     alert("Logado com sucesso!")

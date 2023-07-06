@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Se existir um "user", redirecionar para "loja.html"
   if (user) {
-    window.location.href = '../loja.html';
+    window.location.href = "../loja.html"
   }
 });
 
@@ -41,17 +41,20 @@ cadastro.addEventListener('submit', async (e) => {
   }
 
   // Se não for, deixa cadastrar
-  usuarios.get().then((querySnapshot) => {
-    const numeroUsuarios = querySnapshot.size+1;
-    novoUsuario = db.collection('usuarios').doc(numeroUsuarios.toString())
-    novoUsuario.set({
-      email: email,
-      senha: password,
-      admin: false,
+  const usuario = {
+    email: email,
+    senha: password,
+    admin: false,
+  }
+
+  usuarios.add(usuario)
+    .then(function(docRef) {
+      alert("Cadastro realizado com sucesso!")
+      usuario.id = docRef.id
+      localStorage.setItem('user', JSON.stringify(usuario));
+      window.location.href = "../loja.html"
     })
-    alert("Cadastro realizado com sucesso!")
-    window.location.href = "../loja.html"
-  }).catch((error) => {
-    console.error('Erro ao obter documentos:', error);
-  });
+    .catch(function(error) {
+      console.error("Erro ao criar usuario:", error);
+    });
 });

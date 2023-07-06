@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function deslogar(){
   const user = localStorage.getItem('user');
   localStorage.removeItem('user');
-  window.location.href = "loja.html"
+  location.reload(true);
 }
 
 // Referência aos elementos da interface do usuário

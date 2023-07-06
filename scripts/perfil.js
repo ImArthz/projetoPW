@@ -1,7 +1,7 @@
 function deslogar(){
   const user = localStorage.getItem('user');
   localStorage.removeItem('user');
-  window.location.href = "loja.html"
+  window.location.href = "../loja.html"
 }
 
 // Configuração do Firebase
@@ -36,5 +36,16 @@ perfilForm.addEventListener('submit', async (e) => {
     return
   }
 
-  
+  try{
+    atualizar = db.collection('usuarios').doc(dadosUsuario.id)
+    atualizar.set({
+      email: email,
+      senha: password,
+      admin: dadosUsuario.admin,
+    })
+    alert("Perfil atualizado com sucesso!")
+  }
+  catch{
+    alert("Erro ao atualizar o perfil")
+  }
 })
