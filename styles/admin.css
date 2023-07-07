@@ -20,7 +20,7 @@
 
 .container-checkbox {
   width: 60%;
-  margin: 0 20%;
+  margin: 0 20% 2em 20%;
 }
 
 .container-checkbox label,
@@ -53,10 +53,12 @@
   margin-bottom: 0.2em;
 }
 
-#usuarios form input[type=submit] {
+.submit-usuarios{
+  width: 10em;
   grid-column-start: 1;
   grid-column-end: 5;
-  width: 10%;
+  display: inherit;
+  margin: auto;
 }
 
 #usuarios input[type=checkbox] {
@@ -114,10 +116,11 @@ h2 {
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.6s;
-  margin-top: 40px;
   letter-spacing: 5px;
   background: transparent;
   border: none;
+  width: 40%;
+  margin: 0 30% 1em 30%;
 }
 
 #produto button:hover {
@@ -146,16 +149,16 @@ h3 {
 }
 
 button {
-  background-color: #06ff82; /* Altere para a cor desejada */
-  color: white;
+  background-color: #06ff82;
+  color: black;
   border: none;
   padding: 7px;
   cursor: pointer;
   border-radius: 5px;
-}
+} 
 
 button:hover {
-  background-color: #056302; /* Altere para a cor desejada ao passar o mouse */
+  background-color: #056302;
 }
 
 ul {
@@ -170,7 +173,7 @@ li {
 .add-to-cart-btn,
 #checkout-btn {
   background-color: #4CAF50;
-  color: white;
+  color: black;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -179,6 +182,13 @@ li {
 .add-to-cart-btn:hover,
 #checkout-btn:hover {
   background-color: #45a049;
+}
+
+.atualizar-estoque{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: inherit;
+  margin: auto;
 }
 
 /* Estilo para as caixas de quantidade de produto */
@@ -198,85 +208,10 @@ li {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-*, *::after, *::before{
-  box-sizing: border-box;
-}
 
-html, body{
-  min-height:  100vh;
-  margin: 0;
-  padding: 0;
+.container-pai{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-body{
-  font-family: [sans-serif];
-  background: linear-gradient(#0d40e6, #531313)
-}
-
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  background: rgba(48, 1, 1, 0.5);
-  box-shadow: 0 15px 25px rgba(4, 0, 37, 0.6);
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-}
-
-
-nav a{
-  position: relative;
-  display: inline-block;
-  padding: 5px;
-  color: #b79726;
-  font-size: 17px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .6s;
-  letter-spacing: 5px
-}
-
-nav a:hover{
-  background: #f49803;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #f4c803,
-      0 0 25px #bd9d0b,
-      0 0 50px #f4e403,
-      0 0 100px #d5cf1e;
-}
-
-nav button{
-  position: relative;
-  display: inline-block;
-  padding: 5px;
-  color: #b79726;
-  font-size: 17px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .6s;
-  letter-spacing: 5px;
-  background-color: transparent;
-  border: none;
-}
-
-nav button:hover{
-  background: #f49803;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #f4c803,
-      0 0 25px #bd9d0b,
-      0 0 50px #f4e403,
-      0 0 100px #d5cf1e;
 }

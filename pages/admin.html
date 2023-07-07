@@ -10,70 +10,73 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 <body>
-  <nav class="top-nav">
+  <nav>
     <a href="../loja.html">Loja</a>
     <button type="button" onclick="deslogar()">Deslogar</button>
   </nav>
-  <h2>Painel do Administrador</h2>
+  <div class="container-pai">
+    <h2>Painel do Administrador</h2>
 
-  <div class="container-checkbox">
-    <input type="checkbox" id="checkbox-usuarios" class="checkbox-usuarios">
-    <label for="checkbox-usuarios">
-        Usuários do site:<span class="indicator"></span>
-    </label>
-    <div id="usuarios"></div>
-  </div>
-
-  <div class="container-checkbox">
-    <input type="checkbox" id="checkbox-produto" class="checkbox-produto">
-    <label for="checkbox-produto">
-        Adicionar um produto: <span class="indicator"></span>
-    </label>
-    <div id="produto">
-      <form id="form-produto">
-        <div class="produto-box">
-          <input id="nome" placeholder="Nome do Produto" required>
-        </div>
-        <div class="produto-box">
-          <input type="text" id="descricao" placeholder="Descrição do Produto" required>
-        </div>
-        <div class="produto-box">
-          <input type="text" id="categoria" placeholder="Categoria" required>
-        </div>
-        <div class="produto-box">
-          <input type="number" id="precoCompra" step="0.01" min="0" placeholder="Preço de Compra" required>
-        </div>
-        <div class="produto-box">
-          <input type="number" id="precoVenda" step="0.01" min="0" placeholder="Preço de Venda" required>
-        </div>
-        <div class="produto-box">
-          <input type="text" id="fornecedor" placeholder="Fornecedor" required>
-        </div>
-        <div class="produto-box">
-          <input type="text" id="garantia" placeholder="Garantia" required>
-        </div>
-        <div class="produto-box">
-          <input type="number" id="quantidade" min="0" placeholder="Quantidade em Estoque" required>
-        </div>
-        <button type="submit">Criar produto</button>
-      </form>
+    <div class="container-checkbox">
+      <input type="checkbox" id="checkbox-usuarios" class="checkbox-usuarios">
+      <label for="checkbox-usuarios">
+          Usuários do site:<span class="indicator"></span>
+      </label>
+      <div id="usuarios"></div>
     </div>
-  </div>
 
-  <div class="container-checkbox">
-    <input type="checkbox" id="checkbox-estoque" class="checkbox-estoque">
-    <label for="checkbox-estoque">
-        Controle de Estoque: <span class="indicator"></span>
-    </label>
-    <div id="produtos"></div>
-  </div>
+    <div class="container-checkbox">
+      <input type="checkbox" id="checkbox-produto" class="checkbox-produto">
+      <label for="checkbox-produto">
+          Adicionar um produto: <span class="indicator"></span>
+      </label>
+      <div id="produto">
+        <form id="form-produto">
+          <div class="produto-box">
+            <input id="nome" placeholder="Nome do Produto" required>
+          </div>
+          <div class="produto-box">
+            <input type="text" id="descricao" placeholder="Descrição do Produto" required>
+          </div>
+          <div class="produto-box">
+            <input type="text" id="categoria" placeholder="Categoria" required>
+          </div>
+          <div class="produto-box">
+            <input type="number" id="precoCompra" step="0.01" min="0" placeholder="Preço de Compra" required>
+          </div>
+          <div class="produto-box">
+            <input type="number" id="precoVenda" step="0.01" min="0" placeholder="Preço de Venda" required>
+          </div>
+          <div class="produto-box">
+            <input type="text" id="fornecedor" placeholder="Fornecedor" required>
+          </div>
+          <div class="produto-box">
+            <input type="text" id="garantia" placeholder="Garantia" required>
+          </div>
+          <div class="produto-box">
+            <input type="number" id="quantidade" min="0" placeholder="Quantidade em Estoque" required>
+          </div>
+          <button type="submit">Criar produto</button>
+        </form>
+      </div>
+    </div>
 
-  <div class="container-checkbox">
-    <input type="checkbox" id="checkbox-fluxo" class="checkbox-fluxo">
-    <label for="checkbox-fluxo">
-        Fluxo de Caixa: <span class="indicator"></span>
-    </label>
-    <div id="caixa"></div>
+    <div class="container-checkbox">
+      <input type="checkbox" id="checkbox-estoque" class="checkbox-estoque">
+      <label for="checkbox-estoque">
+          Controle de Estoque: <span class="indicator"></span>
+      </label>
+      <div id="produtos"></div>
+    </div>
+
+    <div class="container-checkbox">
+      <input type="checkbox" id="checkbox-fluxo" class="checkbox-fluxo">
+      <label for="checkbox-fluxo">
+          Fluxo de Caixa: <span class="indicator"></span>
+      </label>
+      <div id="caixa"></div>
+    </div>
+
   </div>
 
   <script src="../scripts/admin.js"></script>

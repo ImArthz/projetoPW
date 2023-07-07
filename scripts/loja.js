@@ -61,7 +61,13 @@ let cart = [];
 
 // Função para exibir os produtos
 function displayProducts(produtos) {
-  productList.innerHTML = '';
+  productList.innerHTML = `
+  <li class="product-item">
+  <div class="titulo">Produto</div>
+  <div class="titulo">Categoria</div>
+  <div class="titulo">Preço</div>
+  <div class="titulo">Garantia</div>
+  <span></span></li>`
 
   // Obter valores dos campos de filtro
   const filterName = filterNameInput.value.toLowerCase();
@@ -69,7 +75,6 @@ function displayProducts(produtos) {
 
   for (const productId in produtos) {
     const product = produtos[productId];
-
     // Aplicar filtros
     const productName = product.nome.toLowerCase();
     const productCategory = product.categoria.toLowerCase();
@@ -81,10 +86,12 @@ function displayProducts(produtos) {
       li.innerHTML = `
         <div class="product-info">
           <div class="product-name">${product.nome}</div>
-          <div class="product-category">${product.categoria}</div>
           <div class="product-description">${product.descricao}</div>
-          <div class="product-price">R$ ${product.precoVenda.toFixed(2)}</div>
           <div class="product-supplier">${product.fornecedor}</div>
+        </div>
+        <div class="product-category">${product.categoria}</div>
+        <div class="product-price">R$ ${product.precoVenda.toFixed(2)}</div>
+        <div class="product-info">
           <div class="product-warranty">${product.garantia}</div>
         </div>
         <button data-id="${productId}" class="add-to-cart-btn">Adicionar ao Carrinho</button>
@@ -121,27 +128,23 @@ function displayCartItems() {
         <div class="cart-product-name">${item.nome}</div>
         <div class="cart-product-price">R$ ${item.precoVenda.toFixed(2)}</div>
       </div>
-      <button data-id="${item.productId}" class="remove-from-cart-btn">Remover</button>
-    `;
+      <button class="remove-from-cart-btn" onClick="removeFromCart('${item.productId.trim()}')">Remover</button>
+    `
     li.classList.add('cart-item');
     cartItems.appendChild(li);
   }
-
-  // Atualizar os manipuladores de evento dos botões "Remover"
-  const removeButtons = document.querySelectorAll('.remove-from-cart-btn');
-  removeButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      const productId = e.target.dataset.id;
-      removeFromCart(productId);
-    });
-  });
 
   updateCartTotal();
 }
 
 // Função para remover um item do carrinho
 function removeFromCart(productId) {
-  cart = cart.filter(item => item.productId !== productId);
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].productId === productId) {
+      cart.splice(i, 1)
+      break
+    }
+  }
   displayCartItems();
   updateCartTotal();
 }
@@ -161,10 +164,30 @@ function updateCartTotal() {
 }
 
 // Manipulador de evento para finalizar a compra
-checkoutBtn.addEventListener('click', () => {
-  // Lógica para finalizar a compra
+checkoutBtn.addEventListener('click', async () => {
   console.log('Compra finalizada:', cart);
-  // Limpar o carrinho após finalizar a compra
+
+  for (let i = 0; i < cart.length; i++) {
+    const item = cart[i];
+    const produtoId = item.productId;
+
+    try {
+      const doc = await produtosRef.doc(produtoId).get();
+      const produto = doc.data();
+      const novaQuantidade = produto.quantidade - 1;
+      const novoFluxo = produto.fluxo + produto.precoVenda;
+
+      await produtosRef.doc(produtoId).update({
+        quantidade: novaQuantidade,
+        fluxo: novoFluxo,
+      });
+
+      console.log("Estoque do id: " + produtoId + " atualizado");
+    } catch (error) {
+      console.log("Erro ao atualizar o estoque do produto de ID " + produtoId + ":", error);
+    }
+  }
+
   cart = [];
   displayCartItems();
   updateCartTotal();

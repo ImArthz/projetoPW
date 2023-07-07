@@ -67,7 +67,7 @@ async function getTextoUsuarios(){
       texto += '<label for=adm_user_' + doc.id + '>' + usuario.email + ' é admin?</label><input type="checkbox" id=adm_user_' + doc.id + ' ' + isAdmin + '></input>'
       texto += '<label for=del_user_' + doc.id + '>Deletar ' + usuario.email + '?</label><input type="checkbox" id=del_user_' + doc.id + '></input>'
     })
-    return texto + '<button type="submit">Atualizar</button>'
+    return texto + '<button type="submit" class="submit-usuarios">Atualizar</button>'
   } catch (error) {
     console.log("Erro ao obter os usuários:", error)
     return ''
@@ -199,7 +199,7 @@ async function getTextoProdutos(){
       texto += '<label for="estoque_' + doc.id + '">' + produto.nome + ' - Atual: ' + produto.quantidade + ', comprar/vendeu: </label>'
       texto += '<input type="number" id="estoque_' + doc.id + '" value="0" min="' + -produto.quantidade + '" required>'
     })
-    return texto + '<button type="submit">Atualizar</button>'
+    return texto + '<button type="submit" class="atualizar-estoque">Atualizar</button>'
   } catch (error) {
     console.log("Erro ao obter os produtos:", error)
     return ''
